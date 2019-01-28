@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TicTacToeActivity"
+    >
+
+    <TextView
+        android:id="@+id/dash_board_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:drawablePadding="8dp"
+        android:gravity="center"
+        android:text="@string/current_player"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/board"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/current_player_icon"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="spread"
+        />
+
+    <ImageView
+        android:id="@+id/current_player_icon"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_margin="4dp"
+        app:layout_constraintBottom_toBottomOf="@id/dash_board_text"
+        app:layout_constraintLeft_toRightOf="@id/dash_board_text"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/dash_board_text"
+        tools:src="@drawable/circle"
+        />
+
+    <GridLayout
+        android:id="@+id/board"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="4"
+        android:padding="8dp"
+        android:rowCount="4"
+        app:layout_constraintBottom_toTopOf="@+id/reset"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dash_board_text"
+        app:layout_constraintVertical_chainStyle="spread"
+        >
+
+        <ImageButton
+            android:id="@+id/button_0_0"
+            style="@style/GridItemStyle"
+            />
+
+        <ImageButton
+            android:id="@+id/button_0_1"
+            style="@style/GridItemStyle"
+            />
+
+        <ImageButton
+            android:id="@+id/button_0_2"
+            style="@style/GridItemStyle"
+            />
+
+        <ImageButton
+            android:id="@+id/button_0_3"
+            style="@style/GridItemStyle"
+            />
+
+        <ImageButton
+            android:id="@+id/button_1_0"
+            style="@style/GridItemStyle"
+            />
+
+        <ImageButton
+            android:id="@+id/button_1_1"
+            style="@style/GridItemStyle"
+            />
+
+        <ImageButton
+            android:id="@+id/button_1_2"
+            style="@style/GridItemStyle"
+            />
+
+        <ImageButton
+            android:id="@+id/button_1_3"
+            style="@style/GridItemStyle"
+            />
+
+        <ImageButton
+            android:id="@+id/button_2_0"
+            style="@style/GridItemStyle"
+            />
+
+        <ImageButton
+            android:id="@+id/button_2_1"
+            style="@style/GridItemStyle"
+            />
+
+        <ImageButton
+            android:id="@+id/button_2_2"
+            style="@style/GridItemStyle"
+            />
+
+        <ImageButton
+            android:id="@+id/button_2_3"
+            style="@style/GridItemStyle"
+            />
+
+        <ImageButton
+            android:id="@+id/button_3_0"
+            style="@style/GridItemStyle"
+            />
+
+        <ImageButton
+            android:id="@+id/button_3_1"
+            style="@style/GridItemStyle"
+            />
+
+        <ImageButton
+            android:id="@+id/button_3_2"
+            style="@style/GridItemStyle"
+            />
+
+        <ImageButton
+            android:id="@+id/button_3_3"
+            style="@style/GridItemStyle"
+            />
+    </GridLayout>
+
+    <Button
+        android:id="@+id/reset"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:background="@android:color/holo_green_light"
+        android:onClick="onResetClicked"
+        android:text="@string/new_game"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/board"
+        />
+</android.support.constraint.ConstraintLayout>

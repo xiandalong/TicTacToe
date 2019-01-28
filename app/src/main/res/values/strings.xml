@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">TicTacTeo</string>
+    <string name="new_game">new game</string>
+    <string name="app_title">Tic Tac Toe</string>
+    <string name="player_won">Player %1$d won!</string>
+    <string name="its_a_tie">It\'s Tie!</string>
+    <string name="current_player">Current Player:</string>
+</resources>
