@@ -48,11 +48,31 @@ public class TicTacToeBoard {
             }
         }
 
+        // 2 X 2 boxes
+        for (int i = 0; i < rows - 1; i++) {
+            for (int j = 0; j < cols - 1; j++) {
+                boolean won = player == grid[i][j]
+                        && player == grid[i][j + 1]
+                        && player == grid[i + 1][j]
+                        && player == grid[i + 1][j + 1];
+                if (won) {
+                    return true;
+                }
+            }
+        }
+
+        // 4 corners
+        if (player == grid[0][0]
+                && player == grid[0][cols - 1]
+                && player == grid[rows - 1][0]
+                && player == grid[rows - 1][cols - 1]) {
+            return true;
+        }
+
         // the diagonals
         boolean won = true;
         for (int i = 0; i < rows; i++) {
             won = won && player == grid[i][i];
-
         }
         if (won) {
             return true;
@@ -61,7 +81,6 @@ public class TicTacToeBoard {
         won = true;
         for (int i = 0; i < rows; i++) {
             won = won && player == grid[rows - 1 - i][i];
-
         }
         return won;
     }

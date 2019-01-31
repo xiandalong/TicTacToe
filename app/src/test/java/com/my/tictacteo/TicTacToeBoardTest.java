@@ -3,8 +3,8 @@ package com.my.tictacteo;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-import static org.mockito.Mockito.verify;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class TicTacToeBoardTest {
 
@@ -82,6 +82,48 @@ public class TicTacToeBoardTest {
         board.addOneMove(0, 1, 2);
         board.addOneMove(1, 1, 1);
         board.addOneMove(0, 2, 2);
+        assertTrue(!board.isPlayerWon(2));
+
+        board.addOneMove(2, 2, 1);
+        assertTrue(board.isPlayerWon(1));
+    }
+
+    /*
+        Test case:
+        O O X
+        O O X
+        * X *
+        Player 1 won
+     */
+    @Test
+    public void playerWonBy2X2Boxes() {
+        board.addOneMove(0, 0, 1);
+        board.addOneMove(0, 2, 2);
+        board.addOneMove(0, 1, 1);
+        board.addOneMove(1, 2, 2);
+        board.addOneMove(1, 0, 1);
+        board.addOneMove(2, 1, 2);
+        assertTrue(!board.isPlayerWon(2));
+
+        board.addOneMove(1, 1, 1);
+        assertTrue(board.isPlayerWon(1));
+    }
+
+    /*
+        Test case:
+        O X O
+        * * X
+        O X O
+        Player 1 won
+     */
+    @Test
+    public void playerWonBy4corners() {
+        board.addOneMove(0, 0, 1);
+        board.addOneMove(0, 1, 2);
+        board.addOneMove(0, 2, 1);
+        board.addOneMove(1, 2, 2);
+        board.addOneMove(2, 0, 1);
+        board.addOneMove(2, 1, 2);
         assertTrue(!board.isPlayerWon(2));
 
         board.addOneMove(2, 2, 1);
